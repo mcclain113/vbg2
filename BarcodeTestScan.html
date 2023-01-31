@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Barcode Scan Test Screen</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Barcode Testing Screen">
+  <meta name="keywords" content="Barcoding, BCMA, pharmacy informatics, pharmacy automation">
+  <meta name="author" content="Barry McClain">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/favicon.png" type="image/ico">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+
+    #pResult{
+      width: auto;
+      height: auto;
+      text-align: center;
+      font-family: "Arial Black",serif;
+      font-size: xxx-large;
+
+
+    }
+    #pInfo{image-resolution: normal;
+      text-align: center;
+      font-family: "Arial Black",serif;
+      font-size: medium;
+    }
+    .pResult{image-resolution: normal;
+      text-align: center;
+      font-family: "Arial Black",serif;
+      font-size: large;
+    }
+    .pTimer{image-resolution: normal;
+      text-align: center;
+      font-family: "Arial Black",serif;
+      font-size: medium;
+    }
+    #pResult1{
+      width: auto;
+      height: auto;
+      text-align: center;
+      font-family: "Arial Black",serif;
+      font-size: large;
+
+    }
+    #pResult2{
+      width: auto;
+      height: auto;
+      text-align: center;
+      font-family: "Arial Black",serif;
+      font-size: large;
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+
+    }
+    #tblExample {
+      width: auto;
+      height: auto;
+      text-align: center;
+  float: right;
+      white-space: pre;
+    }
+#Wrapper{
+  float: left;
+  width: 65%;
+}
+  table{
+  margin: auto;
+    }
+    th {
+      background-color: #000;
+      color: #fff
+    }
+
+    th, td {
+      padding: 10px
+    }
+
+    tr:nth-child(odd) {
+      background-color: #f2f2f2
+    }
+
+  </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CRTFNMJ4FV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CRTFNMJ4FV');
+</script>
+<body>
+<div id="Wrapper">
+  <!-- Header Element Starts Here -->
+  <header id="header">
+
+    <!-- Hgroup Element Ends Here -->
+    <!-- Nav Element Starts Here -->
+    <nav class="navigation"> <a href="index.html">Pharmacy Informatics Home</a>  <a href="publications.html">Publications</a> <a href="https://pharmacyinformatics.blog/blog/" target="_blank">Full Blog</a>  <a href="about.html">About</a> <a href="VirtualBarcodeScanner.html">Virtual Barcode Scanner</a></nav>
+
+  </header>
+  <div class="pResult">
+    <p>Barcode Scan Test Screen</p>
+    <p class="pTimer">Works for scanners with OR without submitting a carriage return (otherwise known as the Enter Key).
+      Clearing the screen will remove everything from the screen, including the history. Not for protected health information.</p>
+
+    <button onclick="copyToClipboard('#pResult2')">Copy Result</button>
+    <button type="button" id="start-over">Clear Screen (Or Just Scan Again)</button>
+    <button onclick="exportTableToCSV('Barcode_Scan_Test_List.csv')">Export Scan History To CSV File</button>
+
+  </div>
+
+  <div id="menu_countdown" class="pTimer">Result Will Display in: <span id="seconds"></span></div>
+  <div id="pResult1">
+  </div>
+  <div id="pResult2">
+  </div>
+
+</div>
+
+<div id="tblExample">
+
+</div>
+<script>
+  function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">
+
+</script>
+<script src="bcscan.js"></script>
+</body>
+</html>

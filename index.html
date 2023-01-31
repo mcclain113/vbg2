@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Pharmacy Informatics- Home</title>
+<meta charset="utf-8">
+<meta name="description" content="A premium resource for pharmacy informatics. A complete site of information, education, tools, and solutions that aim to improve the medication use process using pharmacy informatics concepts.">
+<meta name="keywords" content="pharmacy informatics">
+<meta name="author" content="Barry McClain">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="icon" href="images/favicon.png" type="image/ico">
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
+    <script>
+
+        $(function(){
+
+            var iFrames = $('iframe');
+
+            function iResize() {
+
+                for (var i = 0, j = iFrames.length; i < j; i++) {
+                    iFrames[i].style.height = iFrames[i].contentWindow.document.body.offsetHeight + 'px';}
+            }
+
+            if ($.browser.safari || $.browser.opera) {
+
+                iFrames.load(function(){
+                    setTimeout(iResize, 0);
+                });
+
+                for (var i = 0, j = iFrames.length; i < j; i++) {
+                    var iSource = iFrames[i].src;
+                    iFrames[i].src = '';
+                    iFrames[i].src = iSource;
+                }
+
+            } else {
+                iFrames.load(function() {
+                    this.style.height = this.contentWindow.document.body.offsetHeight + 'px';
+                });
+            }
+
+        });
+
+    </script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CRTFNMJ4FV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CRTFNMJ4FV');
+</script>
+<body>
+
+<!-- Div Wrapper Element Starts Here -->
+<div id="Wrapper">
+  <!-- Header Element Starts Here -->
+  <header id="header">
+    <!-- Hgroup Element Starts Here -->
+    <hgroup id="title">
+      <div >
+        <a href="index.html" id="logo" alt="Pharmacy Informatics"></a>
+      </div>
+      <h2>For Safer and Easier Medication Use</h2>
+    </hgroup>
+    <h2>Premium Pharmacy Informatics Resources</h2>
+    <!-- Hgroup Element Ends Here -->
+    <!-- Nav Element Starts Here -->
+    <nav class="navigation"> <a href="index.html">Pharmacy Informatics Home</a> <a href="publications.html">Publications</a> <a href="https://pharmacyinformatics.blog/blog/" target="_blank">Full Blog</a> <a href="about.html">About</a>  </nav>
+  </header>
+  <!-- Header Element Ends Here -->
+  <!-- Div wrapper2 starts here -->
+  <div id="Wrapper2">
+    <!-- Sidebar Element Starts Here -->
+    <aside id="sidebar-wrapper">
+
+      <nav class="sidebar">
+          <h1><strong>Tools</strong></h1>
+	<ul style="list-style-type: circle; line-height: 30px">
+    		<li><a href="BarcodeGeneratorBasicNDCNoLotorExp.html">Barcode and Medication Label Generator Basic NDC (Lot/Exp Date Not Required)</a></li>
+    		<li><a href="BarcodeGeneratorBasicNDC.html">Barcode and Medication Label Generator Basic NDC (Lot/Exp Date Required)</a></li>
+    		<li><a href="BarcodeGeneratorGS1.html">Barcode and Medication Label Generator (GS1-128) NDC,Exp Date,Lot (Great for Vaccine Prep)</a></li>
+    		<li><a href="BarcodeTestScan.html">Barcode Scan Test Screen (Better than Notepad)</a></li>
+    		<li><a href="CopyAndPaster.html">Copy and Paste (Automated Copy and Pasting from MS Excel to Any Application)</a></li>
+    		<li><a href="TenToElevenDigitNdcConverter.html">Ten to Eleven Digit NDC Converter (10 to 11 Digit NDC Converter)</a></li>
+    		<li><a href="VirtualBarcodeScanner.html">Virtual Barcode Scanner</a></li>
+	</ul>
+      </nav>
+      <!-- Sidebar Element Ends Here -->
+    </aside>
+    <!-- Another Sidebar Element Ends Here -->
+    <!-- Article Element Starts Here -->
+      <article id="contents">
+          <iframe name="Test" src="PI-starter/src/posts/index.html" width="100%" height="100%" frameborder="0" scrolling= "auto" class="iframe">
+          </iframe>
+      </article>
+    <!-- Article Element Ends Here -->
+  </div>
+  <!-- Div wrapper2 ends here -->
+  <!-- Footer Element Starts Here -->
+  <footer id="copyrights">
+    <p><small>&copy; 2023 </small> Pharmacy Informatics <a href="about.html">About Us</a>  - <a href="contact.html">Contact Us</a></p>
+
+  </footer>
+  <!-- Footer Element Ends Here -->
+</div>
+<!-- Div Wrapper Element ends Here -->
+</body>
+</html>
